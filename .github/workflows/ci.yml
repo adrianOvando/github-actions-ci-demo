@@ -1,4 +1,4 @@
-name: CI con Linting
+name: CI con Matriz
 
 on:
   push:
@@ -10,14 +10,21 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
 
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+    strategy:
+      matrix:
+        node-version: [18, 20]
+
     steps:
       - name: Checkout del codigo
         uses: actions/checkout@v6
 
-      - name: Configurar Node.js
+      - name: Configurar Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v6
         with:
-          node-version: '20'
+          node-version: ${{ matrix.node-version }}
 
       - name: Instalar dependencias
         run: npm ci
