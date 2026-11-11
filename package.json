@@ -5,21 +5,17 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint ."
   },
   "dependencies": {
     "express": "^5.2.1"
   },
   "devDependencies": {
-    "@eslint/js": "^10.0.1",
-    "eslint": "^10.14.0",
+    "@eslint/js": "^9.39.5",
+    "eslint": "^9.39.5",
     "globals": "^17.14.0",
     "jest": "^30.3.0",
     "supertest": "^7.2.2"
-  },
-  "scripts": {
-    "start": "node server.js",
-    "test": "jest",
-    "lint": "eslint ."
   }
 }
