@@ -1,4 +1,4 @@
-name: CI Basico
+name: CI con Linting
 
 on:
   push:
@@ -21,6 +21,9 @@ jobs:
 
       - name: Instalar dependencias
         run: npm ci
+
+      - name: Ejecutar linting
+        run: npm run lint
 
       - name: Ejecutar pruebas
         run: npm test
